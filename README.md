@@ -18,5 +18,5 @@ The executable is controlled by an input file read on standard input with READ(*
 virial6 <az009f.inp 
 should produce all the computed values from the published Table.  (Note that the temperatures are in ascending order in the published paper, while they are in descending order in the program output.) The file sample.output shows the desired result.
 
-Questions may be sent to George McBane, mcbaneg@gvsu.edu, @mcbaneg
+Questions may be sent to George McBane, mcbaneg at gvsu dot edu, @mcbaneg
 21 Nov 2019
