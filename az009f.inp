@@ -1,0 +1,6 @@
+ &input rmin = 2.0, nt = 5, t = 296.15, 213.15, 173.15, 143.15, 77.3,
+      ured = 1.88027,
+      rpts = 60, th1pts = 8, th2pts = 11, phipts = 6, h = 1.0e-5,
+	jamax = 4, jbmax = 8, ba = 59.322, bb = 1.9225165, ahomo = 2, bhomo = 1
+ &end
+
