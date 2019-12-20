@@ -20,5 +20,22 @@ The executable is controlled by an input file read on standard input with READ(*
 
 should produce all the computed values from the published Table.  (Note that the temperatures are in ascending order in the published paper, while they are in descending order in the program output.) The file sample.output shows the desired result.
 
+# Platform
+
+The program is written in near-standard Fortran 77 with a few more modern extensions (INCLUDE, END DO, etc.).  It should compile and run on nearly any platform with a current Fortran compiler and a means to direct an input file into the program's standard input.
+
+The 1999 work used the g77 compiler (probably version 0.5.2x, based on gcc 2.95) with the reference Fortran BLAS on 32-bit Microsoft Windows (probably Windows 95). Details are no longer easily accessible.
+
+For the 2019 reproduction, the environment was
+- Compiler: Intel Visual Fortran
+- Compiler version: 19.0.3.203
+- Compiler flags:  -O3  -traceback
+- OS: 64-bit Microsoft Windows 10 Enterprise version 1903
+
+and the hardware was
+- model name      : Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz
+- vendor_id       : GenuineIntel
+- flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe pni dtes64 est tm2 ssse3 fma cx16 xtpr pdcm sse4_1 sse4_2 movbe popcnt aes xsave osxsave avx f16c rdrand hypervisor lahf_lm ida epb xsaveopt pln pts dtherm fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt
+
 Questions may be sent to George McBane, mcbaneg at gvsu dot edu, @mcbaneg
 21 Nov 2019
