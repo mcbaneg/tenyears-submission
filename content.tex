@@ -8,16 +8,16 @@ The interaction virial coefficients can be computed from a model of the intermol
 
 The original work reports virial coefficients predicted by the H$_2$--CO PES described by Jankowski and Szalewicz in 1998 \cite{jank98}.  Its Table I shows values at five temperatures where experimental measurements have been reported.  Its  Figure 1 shows a smooth curve constructed from computations at a denser set of temperatures.  Here we concentrate only on the results in the table.
 
-For the case of two rigid diatomic molecules the PES takes the form $V(r,\theta_1, \theta_2, \phi)$, where $r$ is the length of the vector $\mathbf{r}$ between the centers of mass of the two molecules, the two $\theta$ angles describe the orientations of the internuclear axis of each molecule with respect to $\mathbf{r}$, and $\phi$, the dihedral angle, describes the relative rotation of the two internuclear axes about $\mathbf{r}$.  The computation of the virial coefficients from the PES requires a set of multidimensional integrals over the four coordinates $r$, $\theta_1$, $\theta_2$, and $\phi$.  The necessary formulas are given by Pack \cite{pack83} and Hirschfelder, Curtiss, and Bird \cite{hirs54}.  The main contribution to the virial coefficient comes from the ``classical part'' $B_0$.  For  H$_2$--CO, especially at low temperatures, several quantum corrections, requiring different integrals, are also needed.  They make contributions that are not negligible in comparison to experimental uncertainties.  Table I in the original paper reports $B_0$, four different quantum corrections, and their sum, at the five experimental temperatures.
+For the case of two rigid diatomic molecules the PES takes the form $V(r,\theta_1, \theta_2, \phi)$, where $r$ is the length of the vector $\mathbf{r}$ between the centers of mass of the two molecules, the two $\theta$ angles describe the orientations of the internuclear axis of each molecule with respect to $\mathbf{r}$, and $\phi$, the dihedral angle, describes the relative rotation of the two internuclear axes about $\mathbf{r}$.  The computation of the virial coefficients from the PES requires a set of multidimensional integrals over the four coordinates $r$, $\theta_1$, $\theta_2$, and $\phi$.  The necessary formulas are given by Pack \cite{pack83} and Hirschfelder, Curtiss, and Bird \cite{hirs54}.  The main contribution to the virial coefficient comes from the ``classical part'' $B_0$.  For  H$_2$--CO, especially at low temperatures, several quantum corrections, requiring different integrals, are also needed.  They make contributions that are not negligible in comparison to experimental uncertainties.  Table I in the original paper reports $B_0$, five different quantum corrections, and their sum, at the five experimental temperatures.
 
 \section{Numerical approach}
 The ``Virial6'' program used for the original work performs the required integrations numerically, using nested Gaussian quadratures.  The angular integrals were done with Gauss-Legendre quadrature.  The integration over $r$ was done in two sections, with an analytic integration from $r=0$ to a small finite distance $r_0$ within the hard core of the potential, and a Gauss-Legendre quadrature in $1/r$ from $r_0$ to infinity.  The Gaussian weights and abscissas were obtained with IQPACK routines \cite{elha87}.  For efficient computation, the integrand values $I_i$ and the composite quadrature weights $w_i$ evaluated at all necessary coordinate sets $\{r_i,\theta_{1i}, \theta_{2i}, \phi_i\}$ were collected into vectors that were principally manipulated using BLAS routines.
 
-In molecular physics it was (and is) common practice for groups developing new PESs to provide Fortran subroutines implementing their surfaces as functions of the coordinates.  Such a routine was available for the Jankowski and Szalewicz surface, deposited as supplementary information with their original publication.  A revised version of this routine, more efficient for rapid multiple evaluations, was used for the project.  The  main Virial6 program was written in Fortran for compatibility with such PES routines.  The IQPACK library was then selected as a convenient and well-established Fortran source of accurate numerical quadrature data.
+In molecular physics it was (and is) common practice for groups developing new PESs to provide Fortran subroutines implementing their surfaces as functions of the coordinates.  Such a routine was available for the Jankowski and Szalewicz surface, deposited as supplementary information with their original publication.  A revised version of this routine, more efficient for rapid multiple evaluations, was used for the project.  The main Virial6 program, like other contemporary programs that computed collisional and spectroscopic properties for small molecular systems, was written in Fortran for compatibility with such PES routines and with the wide variety of efficient and well-tested numerical subroutines available in that language.  The IQPACK library was then selected as a convenient and well-established Fortran source of accurate numerical quadrature data.
 
 
 \section{Required changes for modern reproduction}
-The 1999 work used the g77 compiler with the reference Fortran BLAS on 32-bit Microsoft Windows systems.  The modern reproduction used Intel Fortran running on 64-bit Microsoft Windows, with the BLAS library included in the associated version of Intel's Math Kernel Library (MKL).
+The 1999 work used the g77 compiler with the reference Fortran BLAS on 32-bit Microsoft Windows.  The modern reproduction used Intel Visual Fortran running on 64-bit Microsoft Windows 10, with the BLAS library included in the associated version of Intel's Math Kernel Library (MKL).
 
 The IQPACK routines could be used unchanged with the new compiler, and the interface to the BLAS routines remained the same.  Simple changes to the program makefile were required to accommodate the new tools.  The single change required to the main program was the addition of two EXTERNAL statements to routines associated with the angular dependence of the potential; this change was necessary because modern Intel Fortran uses PARITY as a reserved word, while the original program used that name for a function it defined.
 
@@ -28,9 +28,28 @@ The program was controlled by simple text files, redirected through standard inp
 
 
 \section{Results}
-The original program had been written to print the computed virial coefficient components to a decimal precision just a bit higher than that of the experimental values, so that the program output could be converted directly into a table for publication.  The freshly compiled program, driven by the original input file, produced an output identical to the original.
+The original program had been written to print the computed virial coefficient components to a decimal precision just a bit higher than that of the experimental values, so that the program output could be converted directly into a table for publication.  The freshly compiled program, driven by the original input file, produced an output identical to the original.  The numerical results are shown in Table \ref{tab:output}.
+\begin{table}[h]
+  \centering
+  \begin{tabular}{rrrrrccr}
+        \multicolumn{1}{c}{$T$/K}  &  \multicolumn{1}{c}{$B^{(0)}$} & \multicolumn{1}{c}{$B^{(1)}_{r}$} & \multicolumn{1}{c}{$B^{(2)}_{r}$} & \multicolumn{1}{c}{$B^{(1)}_{a\mu}$ }&  \multicolumn{1}{c}{$B^{(1)}_{aI}$(H$_2$) } & \multicolumn{1}{c}{$B^{(1)}_{aI}$(CO)  }&   \multicolumn{1}{c}{$B_{\text{tot}}$ }  \\
+   77.30   &  -97.218   &  10.644  &  -1.195 &    0.416  &   6.614&     0.669  & -80.071 \\
+  143.15   &  -24.861  &   2.690   & -0.112  &   0.080  &   0.849   &  0.140  & -21.214 \\
+  173.15  &   -13.002   &  1.874   & -0.058  &   0.053    & 0.479  &   0.093 &  -10.561 \\
+  213.15   &   -3.179  &   1.293   & -0.029   &  0.035    & 0.263  &   0.062  &  -1.556 \\
+    296.15  &   7.605   &  0.747&    -0.010  &   0.019 &    0.108 &    0.034  &   8.502
+  \end{tabular}
+
+  \caption{Output table from sample run.  The row order has been reversed so that it matches the table in the original publication.  The first column gives the Kelvin temperatures.  The subsequent columns, all in units of cm$^3$/mol, give different components of the computed virial coefficient followed by their sum: the classical result, the first and second order radial corrections, the first order angular corrections associated with end-over-end rotation, the rotation of H$_2$, and the rotation of CO, and the total (for comparison with experiment.) }
+  \label{tab:output}  
+\end{table}
+
+
+
 
 It is possible that the modern executable produces results that differ in late digits of the internal representations of the numerical values.  However, because the original program output and the published table report a modest number of significant figures, it is not possible to determine whether the internal representations of the results are bitwise identical.
 
 
 
+\section{Acknowledgements}
+I am grateful to Mary Karpen for pointing out the Reproducibility Challenge and for encouraging me to participate.
