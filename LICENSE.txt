@@ -1,0 +1,30 @@
+The files vectorh2co.f, vecsetuph2co.f, and vecevalh2co.f implement the H2-CO potential energy surface of P. Jankowski and K. Szalewicz, Journal of Chemical Physics 108, 3554 (1998).  Any published work that uses their surface must cite that paper.  
+
+The IQPACK package (cgqf.f) is covered by the ACM Software License Agreement available at
+https://www.acm.org/publications/policies/software-copyright-notice.  (This is a noncommercial use agreement; commercial use requires a license from ACM.)
+
+The code in angular.f was originally part of the MOLSCAT program. The current version of MOLSCAT is available at https://github.com/molscat/molscat, distributed under the terms of the GNU General Public License, Version 3.
+
+virial6.f, vectorh2co.f, vecsetuph2co.f, and vecevalh2co.f are subject to the MIT license:
+
+MIT License
+
+Copyright (c) 2019 [George C. McBane]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
