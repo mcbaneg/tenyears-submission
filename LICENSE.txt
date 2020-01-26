@@ -1,5 +1,3 @@
-The files vectorh2co.f, vecsetuph2co.f, and vecevalh2co.f implement the H2-CO potential energy surface of P. Jankowski and K. Szalewicz, Journal of Chemical Physics 108, 3554 (1998).  Any published work that uses their surface must cite that paper.  
-
 The IQPACK package (cgqf.f) is covered by the ACM Software License Agreement available at
 https://www.acm.org/publications/policies/software-copyright-notice.  (This is a noncommercial use agreement; commercial use requires a license from ACM.)
 
