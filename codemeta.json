@@ -1,0 +1,26 @@
+{
+	"@context": "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld",
+	"@type": "SoftwareSourceCode",
+	"agents": {
+		"@id": "https://orcid.org/0000-0002-2790-3467",
+		"@type": "person",
+		"name": "George C. McBane",
+		"affiliation": "Grand Valley State University",
+		"mustBeCited": false,
+		"isMaintainer": true,
+		"isRightsHolder": true
+	},
+	"codeRepository": "https://github.com/mcbaneg/tenyears-submission.git",
+	"controlledTem": "software",
+	"dateCreated": "2019-11-27",
+	"datePublished": "2019-11-27",
+	"dateModified": "2020-01-27",
+	"description": "Fortran program for computing second virial coefficients for atom-diatom or diatom-diatom systems. As provided computes interaction virial coefficients for hydrogen-carbon monoxide mixtures based on 1998 potential energy surface of Jankowski and Szalewicz. Computes classical part, first and second order radial quantum corrections, and first order angular quantum corrections.",
+	"isAutomatedBuild": false,
+	"licenseId": "MIT",
+	"title": "Virial6: a Fortran program for virial coefficient calculations",
+	"programmingLanguage": {
+		"name": "Fortran"
+	},
+	"readme": "https://github.com/mcbaneg/tenyears-submission/blob/master/README.md"
+}
