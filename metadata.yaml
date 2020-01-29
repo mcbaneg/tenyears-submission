@@ -47,7 +47,7 @@ replication:
  - cite:  J. Gottfried and George C. McBane, J. Chem. Phys. 112(9), 4417 (2000)
  - bib:  gott00
  - url:  https://scholarworks.gvsu.edu/chm_articles/13
- - doi:  http://dx.doi.org/10.1063/1.480989
+ - doi:  10.1063/1.480989
 
 # Don't forget to surround abstract with double quotes
 abstract: "A calculation of interaction virial coefficients for the hydrogen-carbon monoxide system has been reproduced successfully.  The main calculation is a set of nested quadratures.  The program, written in Fortran, uses IQPACK routines for quadrature weights and nodes, BLAS routines for vector manipulation, and a dedicated subsystem to evaluate the potential energy as a function of molecular coordinates. Only very minor modifications to the main code were required to run it on a modern machine."
