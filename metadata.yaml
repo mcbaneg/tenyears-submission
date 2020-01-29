@@ -35,6 +35,7 @@ keywords: rescience c, chemical physics, potential energy surfaces, virial coeff
 code:
   - url: http://faculty.gvsu.edu/mcbaneg/virial6-resciencec.zip
   - doi: 
+  - swh: swh:1:snp:85dcb31156194ea3bad60f06c1e7999e7bb1a90c
 
 # Date URL and DOI (optional if no data)
 data:
