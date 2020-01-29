@@ -78,11 +78,11 @@ review:
   - url: 
 
 contributors:
-  - name:
-    orcid: 
+  - name: Konrad Hinsen
+    orcid: 0000-0003-0330-9428
     role: editor
-  - name:
-    orcid:
+  - name: Pierre de Buyl
+    orcid: 0000-0002-6640-6463
     role: reviewer
   - name:
     orcid:
@@ -90,19 +90,19 @@ contributors:
 
 # This information will be provided by the editor
 dates:
-  - received:  
-  - accepted:
-  - published: 
+  - received:  November 23, 2019
+  - accepted:  January 29, 2020
+  - published: January 29, 2020
 
 # This information will be provided by the editor
 article:
-  - number: 
-  - doi:    
-  - url:    
+  - number: 1
+  - doi:    10.5281/zenodo.3630224
+  - url:    https://zenodo.org/record/3630224/files/article.pdf
 
 # This information will be provided by the editor
 journal:
   - name:   "ReScience C"
-  - issn:   
-  - volume:
-  - issue: 
+  - issn:   2430-3658
+  - volume: 6
+  - issue:  1
