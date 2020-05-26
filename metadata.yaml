@@ -5,7 +5,7 @@
 #  - For a successful replication, it shoudl be prefixed with "[Re]"
 #  - For a failed replication, it should be prefixed with "[¬Re]"
 #  - For other article types, no instruction (but please, not too long)
-title: "[Re] Reproduction of interaction second virial coefficient calculation for H$_2$--CO interactions [J. Chem. Phys. vol. 112, 4417 (2000)]"
+title: "[Rp] Reproduction of interaction second virial coefficient calculation for H$_2$--CO interactions [J. Chem. Phys. vol. 112, 4417 (2000)]"
 
 # List of authors with name, orcid number, email and affiliation
 # Affiliation "*" means contact author
@@ -35,6 +35,7 @@ keywords: rescience c, chemical physics, potential energy surfaces, virial coeff
 code:
   - url: http://faculty.gvsu.edu/mcbaneg/virial6-resciencec.zip
   - doi: 
+  - swh: swh:1:snp:85dcb31156194ea3bad60f06c1e7999e7bb1a90c
 
 # Date URL and DOI (optional if no data)
 data:
@@ -46,7 +47,7 @@ replication:
  - cite:  J. Gottfried and George C. McBane, J. Chem. Phys. 112(9), 4417 (2000)
  - bib:  gott00
  - url:  https://scholarworks.gvsu.edu/chm_articles/13
- - doi:  http://dx.doi.org/10.1063/1.480989
+ - doi:  10.1063/1.480989
 
 # Don't forget to surround abstract with double quotes
 abstract: "A calculation of interaction virial coefficients for the hydrogen-carbon monoxide system has been reproduced successfully.  The main calculation is a set of nested quadratures.  The program, written in Fortran, uses IQPACK routines for quadrature weights and nodes, BLAS routines for vector manipulation, and a dedicated subsystem to evaluate the potential energy as a function of molecular coordinates. Only very minor modifications to the main code were required to run it on a modern machine."
@@ -59,7 +60,7 @@ bibliography: bibliography.bib
 #  * Editorial
 #  * Letter
 #  * Replication
-type: Replication
+type: Reproduction
 
 # Scientific domain of the article (e.g. Computational Neuroscience)
 #  (one domain only & try to be not overly specific)
@@ -74,14 +75,14 @@ language: Fortran
 
 # For example, the URL of the GitHub issue where review actually occured
 review: 
-  - url: 
+  - url: https://github.com/ReScience/submissions/issues/11
 
 contributors:
-  - name:
-    orcid: 
+  - name: Konrad Hinsen
+    orcid: 0000-0003-0330-9428
     role: editor
-  - name:
-    orcid:
+  - name: Pierre de Buyl
+    orcid: 0000-0002-6640-6463
     role: reviewer
   - name:
     orcid:
@@ -89,19 +90,19 @@ contributors:
 
 # This information will be provided by the editor
 dates:
-  - received:  
-  - accepted:
-  - published: 
+  - received:  November 23, 2019
+  - accepted:  January 29, 2020
+  - published: January 29, 2020
 
 # This information will be provided by the editor
 article:
-  - number: 
-  - doi:    
-  - url:    
+  - number: 1
+  - doi:    10.5281/zenodo.3630224
+  - url:    https://zenodo.org/record/3630224/files/article.pdf
 
 # This information will be provided by the editor
 journal:
   - name:   "ReScience C"
-  - issn:   
-  - volume:
-  - issue: 
+  - issn:   2430-3658
+  - volume: 6
+  - issue:  1
